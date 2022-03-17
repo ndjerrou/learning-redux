@@ -1,29 +1,21 @@
-import { createStore } from "./customStore.js";
-import store from "./store.js";
+import createStore from "./customStore.js";
+import reducer from "./reducer.js";
+
+// import store from "./store.js";
 
 import * as actions from "./actions.js";
 
-const customStore = createStore();
+// old implementation
+// store.subscribe(() => console.log("new state coming"));
 
-console.log(customStore);
+// custom store
+const customStore = createStore(reducer);
 
-console.log(customStore.getState());
+customStore.subscribe(() => console.log("custom store"));
 
-store.dispatch(actions.bugAdded("new bug added right now "));
-store.dispatch(actions.bugAdded("new bug added right before "));
+customStore.dispatch(actions.bugAdded("new bug added right now "));
+customStore.dispatch(actions.bugAdded("new bug added right now "));
+customStore.dispatch(actions.bugAdded("new bug added right now "));
+customStore.dispatch(actions.bugAdded("new bug added right now "));
 
-console.log(customStore.getState());
-
-// add a bug
-
-// 1 - define an action
-
-// store.subscribe(() => console.log(store.getState()));
-
-// store.dispatch(bugAdded("Buttons RS are not pointing to the good ressources"));
-// store.dispatch(bugAdded("Footer link not working"));
-// store.dispatch(bugAdded("Navbar not responsive"));
-
-// store.dispatch(bugResolved(2));
-// store.dispatch(bugResolved(1));
-// store.dispatch(bugResolved(3));
+// store.dispatch(actions.bugAdded("new bug added right before "));
