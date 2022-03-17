@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
+    "parcel": "^2.3.2",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9"
+  }
+}
